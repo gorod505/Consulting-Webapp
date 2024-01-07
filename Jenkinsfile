@@ -41,7 +41,7 @@ pipeline {
             steps {
                 script {
                     // Deploy the Docker image (adjust as needed)
-                    sh 'docker run -d -p 8080:80 --name consulting-webapp <your-docker-username>/consulting-webapp:latest'
+                    sh 'docker run -d -p 8080:80 --name consulting-webapp <yosufzai5@gmail.com>/consulting-webapp:latest'
                 }
             }
         }
