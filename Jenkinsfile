@@ -4,7 +4,7 @@ pipeline {
     environment {
         // Define credentials
         GIT_CREDENTIALS = credentials('gorod505:Kabuljan#2020')
-        DOCKER_REGISTRY_CREDENTIALS = credentials('yosufzai5@gmail.com')
+        DOCKER_REGISTRY_CREDENTIALS = credentials('kamaly')
     }
 
     stages {
@@ -30,9 +30,9 @@ pipeline {
             steps {
                 script {
                     // Push Docker image to registry
-                    sh 'docker login -u <yosufzai5@gmail.com> -p <Kabuljan505!>'
-                    sh 'docker tag consulting-webapp <yosufzai5@gmail.com>/consulting-webapp:latest'
-                    sh 'docker push <yosufzai5@gmail.com>/consulting-webapp:latest'
+                    sh 'docker login -u <kamaly> -p <Kabuljan505!>'
+                    sh 'docker tag consulting-webapp <kamaly>/consulting-webapp:latest'
+                    sh 'docker push <kamaly>/consulting-webapp:latest'
                 }
             }
         }
@@ -41,7 +41,7 @@ pipeline {
             steps {
                 script {
                     // Deploy the Docker image (adjust as needed)
-                    sh 'docker run -d -p 8080:80 --name consulting-webapp <yosufzai5@gmail.com>/consulting-webapp:latest'
+                    sh 'docker run -d -p 8080:80 --name consulting-webapp <kamaly>/consulting-webapp:latest'
                 }
             }
         }
